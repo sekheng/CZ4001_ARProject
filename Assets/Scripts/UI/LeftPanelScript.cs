@@ -8,9 +8,6 @@ using UnityEngine.UI;
 /// </summary>
 public class LeftPanelScript : MonoBehaviour
 {
-    [SerializeField, Tooltip("The image to block raycasts")]
-    private Image m_blockRaycasts;
-
     [Header("Debugging Purpose")]
     [SerializeField, Tooltip("The float value to tween to")]
     float m_TweenSize;
@@ -26,7 +23,6 @@ public class LeftPanelScript : MonoBehaviour
 
     public void SetPanelActive(bool active)
     {
-        m_blockRaycasts.enabled = active;
         // then start tweening this panel left
         LeanTween.moveLocalX(gameObject, active ? OriginaPos.x + m_TweenSize : OriginaPos.x, 0.3f).setEase(LeanTweenType.easeOutBack);
     }

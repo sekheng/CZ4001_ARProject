@@ -363,7 +363,6 @@ GameObject:
   - component: {fileID: 575561315}
   - component: {fileID: 575561314}
   - component: {fileID: 575561313}
-  - component: {fileID: 575561312}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -371,19 +370,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &575561312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 575561311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9d38295d3f10a1469fa78ee176f5456, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectionPoint: {fileID: 0}
 --- !u!114 &575561313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -610,6 +596,18 @@ MonoBehaviour:
       - m_Target: {fileID: 524102619970223652}
         m_TargetAssemblyTypeName: LeftPanelScript, Assembly-CSharp
         m_MethodName: SetPanelActive
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 889266136}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -968,6 +966,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e94a0d6d1b3fe0b40851fc4e306820ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_blockRaycasts: {fileID: 889266136}
   m_TweenSize: 0
   OriginaPos: {x: 0, y: 0, z: 0}
