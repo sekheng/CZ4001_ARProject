@@ -1,7 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.Events;
+
+
 /// <summary>
 /// technically we don't need this but to demonstrate the capability of observer pattern and to encourage everyone to do something similar instead of singletons! 
 /// Act as middle manager to send data from one sender to multiple receivers, This will be a simplified version of it. To have something like passing variables to the listeners, create your own delegates.
@@ -12,7 +12,7 @@ public class ObserverSystem
     /// <summary>
     /// This is the subscriber's base
     /// </summary>
-    private Dictionary<string, UnityEvent> m_AllSubscribers = new();
+    private Dictionary<string, UnityEventBase> m_AllSubscribers = new();
 
     public static ObserverSystem Instance
     {
@@ -39,12 +39,23 @@ public class ObserverSystem
     public void SubscribeEvent(string eventName, UnityAction listenerFunction)
     {
         // If can't find the event name, we create another one!
-        if (!m_AllSubscribers.TryGetValue(eventName, out UnityEvent theEvent))
+        if (!m_AllSubscribers.TryGetValue(eventName, out UnityEventBase theEvent))
         {
             theEvent = new UnityEvent();
             m_AllSubscribers.Add(eventName, theEvent);
         }
-        theEvent.AddListener(listenerFunction);
+        (theEvent as UnityEvent).AddListener(listenerFunction);
+    }
+
+    public void SubscribeEvent<T>(string eventName, UnityAction<T> listenerFunction)
+    {
+        // If can't find the event name, we create another one!
+        if (!m_AllSubscribers.TryGetValue(eventName, out UnityEventBase theEvent))
+        {
+            theEvent = new UnityEvent<T>();
+            m_AllSubscribers.Add(eventName, theEvent);
+        }
+        (theEvent as UnityEvent<T>).AddListener(listenerFunction);
     }
 
     /// <summary>
@@ -54,9 +65,17 @@ public class ObserverSystem
     /// <param name="listenerFunction"> The Function to be removed from that event! </param>
     public void UnsubscribeEvent(string eventName, UnityAction listenerFunction)
     {
-        if (m_AllSubscribers.TryGetValue(eventName, out UnityEvent theEvent))
+        if (m_AllSubscribers.TryGetValue(eventName, out UnityEventBase theEvent))
         {
-            theEvent.RemoveListener(listenerFunction);
+            (theEvent as UnityEvent).RemoveListener(listenerFunction);
+        }
+    }
+
+    public void UnsubscribeEvent<T>(string eventName, UnityAction<T> listenerFunction)
+    {
+        if (m_AllSubscribers.TryGetValue(eventName, out UnityEventBase theEvent))
+        {
+            (theEvent as UnityEvent<T>).RemoveListener(listenerFunction);
         }
     }
 
@@ -66,9 +85,17 @@ public class ObserverSystem
     /// <param name="eventName"> The event name to trigger! </param>
     public void TriggerEvent(string eventName)
     {
-        if (m_AllSubscribers.TryGetValue(eventName, out UnityEvent theEvent))
+        if (m_AllSubscribers.TryGetValue(eventName, out UnityEventBase theEvent))
         {
-            theEvent.Invoke();
+            (theEvent as UnityEvent).Invoke();
+        }
+    }
+
+    public void TriggerEvent<T>(string eventName, T eventArg)
+    {
+        if (m_AllSubscribers.TryGetValue(eventName, out UnityEventBase theEvent))
+        {
+            (theEvent as UnityEvent<T>).Invoke(eventArg);
         }
     }
 }

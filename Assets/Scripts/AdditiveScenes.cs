@@ -17,10 +17,4 @@ public class AdditiveScenes : MonoBehaviour
             SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
         }
     }
-
-    private void Start()
-    {
-        // hardcode to the first scene to be active
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName(listOfScenes[0]));
-    }
 }

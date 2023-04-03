@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 965943695177755265}
   - component: {fileID: 6770409377244442059}
   - component: {fileID: 3076685233215434270}
+  - component: {fileID: 6854246123077313406}
   m_Layer: 5
   m_Name: Fox Icons Background
   m_TagString: Untagged
@@ -122,7 +123,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6770409377244442059}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6854246123077313406}
+        m_TargetAssemblyTypeName: ARObjectScript, Assembly-CSharp
+        m_MethodName: SendSelectedObjectEvent
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6854246123077313406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349085190601804308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623cf2b03bfd7694f95f1221d8048829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6658430208874647053
 GameObject:
   m_ObjectHideFlags: 0
