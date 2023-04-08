@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Desert.unity
     guid: 53f5a0914b195b74abc2fb43a9e2ce22
+  - enabled: 1
+    path: Assets/Scenes/UI.unity
+    guid: df1b303fc2ec3664c96e743c37b106f7
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 179eefc1d3cbf984581528c9cbcabe96, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 6af035f8a18af864d8a458de437fd7c1, type: 2}
