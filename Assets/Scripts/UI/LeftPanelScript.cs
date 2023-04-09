@@ -25,5 +25,18 @@ public class LeftPanelScript : MonoBehaviour
     {
         // then start tweening this panel left
         LeanTween.moveLocalX(gameObject, active ? OriginaPos.x + m_TweenSize : OriginaPos.x, 0.3f).setEase(LeanTweenType.easeOutBack);
+
+        // Disable cactus spawning when the panel is active
+        if (active)
+        {
+            FindObjectOfType<Cactus1>().OnFoxButtonPressed();
+        }
     }
+
+
+    public void HidePanel()
+    {
+        LeanTween.moveLocalX(gameObject, OriginaPos.x, 0.3f).setEase(LeanTweenType.easeOutBack);
+    }
+
 }

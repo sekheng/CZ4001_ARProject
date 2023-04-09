@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Desert.unity
     guid: 53f5a0914b195b74abc2fb43a9e2ce22
   - enabled: 0
-    path: Assets/Scenes/Game.unity
+    path: Assets/Scenes/Autumn.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
     path: Assets/Scenes/Snow.unity

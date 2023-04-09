@@ -14,10 +14,9 @@ public class Cactus1 : MonoBehaviour
     void Start()
     {
         arRaycastManager = FindObjectOfType<ARRaycastManager>();
-        cactusButton.onClick.AddListener(OnFoxButtonPressed);
     }
 
-    void OnFoxButtonPressed()
+    public void OnFoxButtonPressed()
     {
         isCactusButtonPressed = true;
     }
