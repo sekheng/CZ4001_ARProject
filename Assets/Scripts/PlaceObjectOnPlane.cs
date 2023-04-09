@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
+
 public class PlaceObjectOnPlane : MonoBehaviour
 {
     [SerializeField]
@@ -11,10 +12,28 @@ public class PlaceObjectOnPlane : MonoBehaviour
     public GameObject spawnedObject;
     ARRaycastManager raycaster;
     List<ARRaycastHit> hits = new List<ARRaycastHit>();
+
+    private void OnEnable()
+    {
+        ObserverSystem.Instance.SubscribeEvent<string>(ARObjectScript.AR_OBJECT_SELECTED, PlaceObj);
+    }
+
+    private void OnDisable()
+    {
+        ObserverSystem.Instance.UnsubscribeEvent<string>(ARObjectScript.AR_OBJECT_SELECTED, PlaceObj);
+    }
+
+    void PlaceObj(string name)
+    {
+        Debug.Log(name);
+        Instantiate(placedPrefab);
+    }
+
     private void Start()
     {
         raycaster = GetComponent<ARRaycastManager>();
     }
+
     ARAnchor CreateAnchor(in ARRaycastHit hit)
     {
         // create a regular anchor at the hit pose
