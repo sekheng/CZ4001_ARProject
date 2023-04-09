@@ -520,7 +520,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: '"Desert"'
+          m_StringArgument: Desert
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &340053022
@@ -573,6 +573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fcff506010b3c489a62f1ed567f740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftPanelScript: {fileID: 524102619970223652}
 --- !u!1001 &359127071
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3772,7 +3773,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: '"Snow"'
+          m_StringArgument: Snow
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1588263173
@@ -3825,6 +3826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fcff506010b3c489a62f1ed567f740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftPanelScript: {fileID: 0}
 --- !u!1 &1596921199
 GameObject:
   m_ObjectHideFlags: 0
@@ -4091,6 +4093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fcff506010b3c489a62f1ed567f740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftPanelScript: {fileID: 0}
 --- !u!114 &1617036613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4144,7 +4147,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: '"Autumn"'
+          m_StringArgument: Autumn
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1617036614
