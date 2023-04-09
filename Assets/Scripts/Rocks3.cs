@@ -14,10 +14,10 @@ public class Rocks3 : MonoBehaviour
     void Start()
     {
         arRaycastManager = FindObjectOfType<ARRaycastManager>();
-        rocksButton.onClick.AddListener(OnFoxButtonPressed);
+        rocksButton.onClick.AddListener(OnRocksButtonPressed);
     }
 
-    void OnFoxButtonPressed()
+    void OnRocksButtonPressed()
     {
         isRocksButtonPressed = true;
     }
