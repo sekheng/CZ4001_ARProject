@@ -522,7 +522,6 @@ IL2CPP_EXTERN_C const RuntimeMethod* AsyncVoidMethodBuilder_AwaitUnsafeOnComplet
 IL2CPP_EXTERN_C const RuntimeMethod* AsyncVoidMethodBuilder_Start_TisU3CStartU3Ed__9_tABCDCDFEE08DA934B3DA440B2D6499CD79A6CE33_m3E9A8065EFFAC02ED53BF8EC4B82007AC21C2578_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* ButterflySpawner_PlaneChanged_m624E13FCC88DB92003FF146F32DA119BF57474D2_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* ButtonManager_SelectObject_mF93C06A3BF39977EF595DAF7620219F3F96FD153_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* Cactus1_OnFoxButtonPressed_mF81F4A15DCDB481D6D6BBBAF104095E793560082_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Cactus2_OnFoxButtonPressed_mBD652638B47C34E2FDE521450E75616E4E82087C_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Cactus3_OnFoxButtonPressed_mD4C2BE7606EEEBED42EB30DA7CCD0C3629972174_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* Component_GetComponent_TisARPlaneManager_t9DA6C512BDCFFBEE8B3DAA7170EB3BFFDE26A928_m668A6CC15F573ABC389E612A2423599B5ADDC2EF_RuntimeMethod_var;
@@ -22441,10 +22440,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Cactus1_Start_m84353BA8C40311BFEDC6D36D5
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Cactus1_OnFoxButtonPressed_mF81F4A15DCDB481D6D6BBBAF104095E793560082_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_FindObjectOfType_TisARRaycastManager_tD9459374F0F5BD9E2E4A8A1C665E7F33F9C2EE44_m6C0D164D853001737CDC01D63A5651D819135639_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7_il2cpp_TypeInfo_var);
 		s_Il2CppMethodInitialized = true;
 	}
 	{
@@ -22454,16 +22451,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Cactus1_Start_m84353BA8C40311BFEDC6D36D5
 		L_0 = Object_FindObjectOfType_TisARRaycastManager_tD9459374F0F5BD9E2E4A8A1C665E7F33F9C2EE44_m6C0D164D853001737CDC01D63A5651D819135639(Object_FindObjectOfType_TisARRaycastManager_tD9459374F0F5BD9E2E4A8A1C665E7F33F9C2EE44_m6C0D164D853001737CDC01D63A5651D819135639_RuntimeMethod_var);
 		__this->___arRaycastManager_6 = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___arRaycastManager_6), (void*)L_0);
-		// cactusButton.onClick.AddListener(OnFoxButtonPressed);
-		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_1 = __this->___cactusButton_5;
-		NullCheck(L_1);
-		ButtonClickedEvent_t8EA72E90B3BD1392FB3B3EF167D5121C23569E4C* L_2;
-		L_2 = Button_get_onClick_m701712A7F7F000CC80D517C4510697E15722C35C_inline(L_1, NULL);
-		UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7* L_3 = (UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7*)il2cpp_codegen_object_new(UnityAction_t11A1F3B953B365C072A5DCC32677EE1796A962A7_il2cpp_TypeInfo_var);
-		NullCheck(L_3);
-		UnityAction__ctor_mC53E20D6B66E0D5688CD81B88DBB34F5A58B7131(L_3, __this, (intptr_t)((void*)Cactus1_OnFoxButtonPressed_mF81F4A15DCDB481D6D6BBBAF104095E793560082_RuntimeMethod_var), NULL);
-		NullCheck(L_2);
-		UnityEvent_AddListener_m8AA4287C16628486B41DA41CA5E7A856A706D302(L_2, L_3, NULL);
 		// }
 		return;
 	}
