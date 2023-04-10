@@ -25,7 +25,10 @@ public class SpawningUI : MonoBehaviour
     void ARButtonSpawn(string spawnName)
     {
         // ensure the image is active then set itself inactive
-        CancelImg.gameObject.SetActive(true);
+        if (CancelImg != null)
+        {
+            CancelImg.gameObject.SetActive(true);
+        }
         Debug.Log("Spawning " + spawnName);
     }
 
