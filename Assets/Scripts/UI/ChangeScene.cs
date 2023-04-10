@@ -26,7 +26,7 @@ public class ChangeScene : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+            SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
             currentARScene = sceneName;
             CreateActiveARSceneObject(sceneName);
         }
@@ -44,7 +44,7 @@ public class ChangeScene : MonoBehaviour
         Destroy(activeARSceneObject);
 
         // Load the new scene
-        AsyncOperation loadOperation = SceneManager.LoadSceneAsync(loadScene, LoadSceneMode.Additive);
+        AsyncOperation loadOperation = SceneManager.LoadSceneAsync(loadScene, LoadSceneMode.Single);
         while (!loadOperation.isDone)
         {
             yield return null;
