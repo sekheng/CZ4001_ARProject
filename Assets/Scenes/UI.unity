@@ -3783,7 +3783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fcff506010b3c489a62f1ed567f740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftPanelScript: {fileID: 0}
+  leftPanelScript: {fileID: 524102619970223652}
 --- !u!1 &1596921199
 GameObject:
   m_ObjectHideFlags: 0
@@ -4050,7 +4050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fcff506010b3c489a62f1ed567f740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftPanelScript: {fileID: 0}
+  leftPanelScript: {fileID: 524102619970223652}
 --- !u!114 &1617036613
 MonoBehaviour:
   m_ObjectHideFlags: 0
