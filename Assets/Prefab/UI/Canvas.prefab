@@ -3564,6 +3564,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: e512b8b571e62e64ca28b135c30c2313, type: 3}
+    - target: {fileID: 2628172073104491083, guid: 738c29dfded0cd947ae9dc90b7fc22e8, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3076685233215434270, guid: 738c29dfded0cd947ae9dc90b7fc22e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -4855,6 +4859,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: b1e2fcb66edae134b97bfea54bd01d1b, type: 3}
+    - target: {fileID: 2628172073104491083, guid: 738c29dfded0cd947ae9dc90b7fc22e8, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3076685233215434270, guid: 738c29dfded0cd947ae9dc90b7fc22e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -5265,6 +5273,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 5adc0d1918d1bbc4794ce24687dc2304, type: 3}
     - target: {fileID: 2628172073104491083, guid: 738c29dfded0cd947ae9dc90b7fc22e8, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2628172073104491083, guid: 738c29dfded0cd947ae9dc90b7fc22e8, type: 3}
       propertyPath: m_PreserveAspect
       value: 1
       objectReference: {fileID: 0}
@@ -5463,6 +5475,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 60dfe367d18323543acda5e95322f776, type: 3}
+    - target: {fileID: 2628172073104491083, guid: 738c29dfded0cd947ae9dc90b7fc22e8, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2628172073104491083, guid: 738c29dfded0cd947ae9dc90b7fc22e8, type: 3}
       propertyPath: m_PreserveAspect
       value: 1
@@ -5857,6 +5873,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: aed7237505d39464eb8a766bc23f74f2, type: 3}
+    - target: {fileID: 2628172073104491083, guid: 738c29dfded0cd947ae9dc90b7fc22e8, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2628172073104491083, guid: 738c29dfded0cd947ae9dc90b7fc22e8, type: 3}
       propertyPath: m_PreserveAspect
       value: 1
