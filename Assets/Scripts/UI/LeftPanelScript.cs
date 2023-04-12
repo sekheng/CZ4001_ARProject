@@ -24,13 +24,24 @@ public class LeftPanelScript : MonoBehaviour
     public void SetPanelActive(bool active)
     {
         // then start tweening this panel left
-        LeanTween.moveLocalX(gameObject, active ? OriginaPos.x + m_TweenSize : OriginaPos.x, 0.3f).setEase(LeanTweenType.easeOutBack);
-
-        // Disable cactus spawning when the panel is active
-        if (active)
+        LeanTween.moveLocalX(gameObject, active ? OriginaPos.x + m_TweenSize : OriginaPos.x, 0.3f).setEase(LeanTweenType.easeOutBack).setOnComplete(() =>
         {
-            FindObjectOfType<Cactus1>().OnFoxButtonPressed();
-        }
+            if (active)
+            {
+                Vector3 newPos = new Vector3(OriginaPos.x + m_TweenSize, OriginaPos.y, OriginaPos.z);
+                transform.SetLocalPositionAndRotation(newPos, Quaternion.identity);
+            }
+            else
+            {
+                transform.SetLocalPositionAndRotation(OriginaPos, Quaternion.identity);
+            }
+        });
+
+        //// Disable cactus spawning when the panel is active
+        //if (active)
+        //{
+        //    FindObjectOfType<Cactus1>().OnFoxButtonPressed();
+        //}
     }
 
 
