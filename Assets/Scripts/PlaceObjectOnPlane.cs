@@ -9,30 +9,10 @@ public class PlaceObjectOnPlane : MonoBehaviour
 {
     [SerializeField]
     GameObject placedPrefab;
+
     public GameObject spawnedObject;
-    ARRaycastManager raycaster;
+    public ARRaycastManager arRaycastManager;
     List<ARRaycastHit> hits = new List<ARRaycastHit>();
-
-    private void OnEnable()
-    {
-        ObserverSystem.Instance.SubscribeEvent<string>(ARObjectScript.AR_OBJECT_SELECTED, PlaceObj);
-    }
-
-    private void OnDisable()
-    {
-        ObserverSystem.Instance.UnsubscribeEvent<string>(ARObjectScript.AR_OBJECT_SELECTED, PlaceObj);
-    }
-
-    void PlaceObj(string name)
-    {
-        Debug.Log(name);
-        Instantiate(placedPrefab);
-    }
-
-    private void Start()
-    {
-        raycaster = GetComponent<ARRaycastManager>();
-    }
 
     ARAnchor CreateAnchor(in ARRaycastHit hit)
     {
@@ -48,10 +28,17 @@ public class PlaceObjectOnPlane : MonoBehaviour
         return anchor;
     }
 
-    void OnPlaceObject(InputValue value)
+    public void OnPlaceObject()
     {
-        Vector2 touchPosition = value.Get<Vector2>();
-        if (raycaster.Raycast(touchPosition, hits, TrackableType.PlaneWithinPolygon))
+        StartCoroutine(SpawnObjectWithDelay());
+    }
+
+    IEnumerator SpawnObjectWithDelay()
+    {
+        yield return new WaitForSeconds(0.7f);
+
+        Vector2 touchPosition = new Vector2(Screen.width / 2, Screen.height / 2);
+        if (arRaycastManager.Raycast(touchPosition, hits, TrackableType.PlaneWithinPolygon))
         {
             //get the hit point(pose) on the plane
             Pose hitPose = hits[0].pose;

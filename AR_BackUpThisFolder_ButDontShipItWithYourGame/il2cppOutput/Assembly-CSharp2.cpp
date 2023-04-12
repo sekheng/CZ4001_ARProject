@@ -2586,8 +2586,8 @@ struct PlaceObjectOnPlane_tF7D1D89CFA4C4FEB5A64513D83FDFDAFF49F33F1  : public Mo
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___placedPrefab_4;
 	// UnityEngine.GameObject PlaceObjectOnPlane::spawnedObject
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___spawnedObject_5;
-	// UnityEngine.XR.ARFoundation.ARRaycastManager PlaceObjectOnPlane::raycaster
-	ARRaycastManager_tD9459374F0F5BD9E2E4A8A1C665E7F33F9C2EE44* ___raycaster_6;
+	// UnityEngine.XR.ARFoundation.ARRaycastManager PlaceObjectOnPlane::arRaycastManager
+	ARRaycastManager_tD9459374F0F5BD9E2E4A8A1C665E7F33F9C2EE44* ___arRaycastManager_6;
 	// System.Collections.Generic.List`1<UnityEngine.XR.ARFoundation.ARRaycastHit> PlaceObjectOnPlane::hits
 	List_1_t0754071572EFE7A5C92A59495D2524FC935364E3* ___hits_7;
 };
@@ -23404,7 +23404,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FlowerSpawner_Awake_m684EA3D59C54EAE6CA3
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
 	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Action_1_t009680BF19017ECA60753C7F605CBD85C56C6560_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Component_GetComponent_TisARPlaneManager_t9DA6C512BDCFFBEE8B3DAA7170EB3BFFDE26A928_m668A6CC15F573ABC389E612A2423599B5ADDC2EF_RuntimeMethod_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&FlowerSpawner_PlaneChanged_m5D4921EBBD73D0FD59BA93B40348C4ADF073E646_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Resources_LoadAll_TisGameObject_t76FEDD663AB33C991A9C9A23129337651094216F_mBBF6B0D85A5F905D0836AC87598997983C787EBC_RuntimeMethod_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral3DB9789CB9E61413F57FBA5038C54924AD66A23F);
 		s_Il2CppMethodInitialized = true;
@@ -23420,28 +23422,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FlowerSpawner_Awake_m684EA3D59C54EAE6CA3
 		L_1 = Component_GetComponent_TisARPlaneManager_t9DA6C512BDCFFBEE8B3DAA7170EB3BFFDE26A928_m668A6CC15F573ABC389E612A2423599B5ADDC2EF(__this, Component_GetComponent_TisARPlaneManager_t9DA6C512BDCFFBEE8B3DAA7170EB3BFFDE26A928_m668A6CC15F573ABC389E612A2423599B5ADDC2EF_RuntimeMethod_var);
 		__this->___arPlaneManager_8 = L_1;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___arPlaneManager_8), (void*)L_1);
-		// }
-		return;
-	}
-}
-// System.Void FlowerSpawner::SpawnFlowers()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FlowerSpawner_SpawnFlowers_m3D4971F2985E3445210335228F77128136B05376 (FlowerSpawner_tB033471F2120634EF2673B5B303EF1617C75E661* __this, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Action_1_t009680BF19017ECA60753C7F605CBD85C56C6560_il2cpp_TypeInfo_var);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&FlowerSpawner_PlaneChanged_m5D4921EBBD73D0FD59BA93B40348C4ADF073E646_RuntimeMethod_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
 		// arPlaneManager.planesChanged += PlaneChanged;
-		ARPlaneManager_t9DA6C512BDCFFBEE8B3DAA7170EB3BFFDE26A928* L_0 = __this->___arPlaneManager_8;
-		Action_1_t009680BF19017ECA60753C7F605CBD85C56C6560* L_1 = (Action_1_t009680BF19017ECA60753C7F605CBD85C56C6560*)il2cpp_codegen_object_new(Action_1_t009680BF19017ECA60753C7F605CBD85C56C6560_il2cpp_TypeInfo_var);
-		NullCheck(L_1);
-		Action_1__ctor_mBEDDD2BF96A8A407FBB833F764447E82E3D50BCF(L_1, __this, (intptr_t)((void*)FlowerSpawner_PlaneChanged_m5D4921EBBD73D0FD59BA93B40348C4ADF073E646_RuntimeMethod_var), NULL);
-		NullCheck(L_0);
-		ARPlaneManager_add_planesChanged_m295E8F0B09AF78A2D9249F3C07BFD4D4F749F36D(L_0, L_1, NULL);
+		ARPlaneManager_t9DA6C512BDCFFBEE8B3DAA7170EB3BFFDE26A928* L_2 = __this->___arPlaneManager_8;
+		Action_1_t009680BF19017ECA60753C7F605CBD85C56C6560* L_3 = (Action_1_t009680BF19017ECA60753C7F605CBD85C56C6560*)il2cpp_codegen_object_new(Action_1_t009680BF19017ECA60753C7F605CBD85C56C6560_il2cpp_TypeInfo_var);
+		NullCheck(L_3);
+		Action_1__ctor_mBEDDD2BF96A8A407FBB833F764447E82E3D50BCF(L_3, __this, (intptr_t)((void*)FlowerSpawner_PlaneChanged_m5D4921EBBD73D0FD59BA93B40348C4ADF073E646_RuntimeMethod_var), NULL);
+		NullCheck(L_2);
+		ARPlaneManager_add_planesChanged_m295E8F0B09AF78A2D9249F3C07BFD4D4F749F36D(L_2, L_3, NULL);
 		// }
 		return;
 	}

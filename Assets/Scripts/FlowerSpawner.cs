@@ -16,10 +16,6 @@ public class FlowerSpawner : MonoBehaviour
     {
         flowers = Resources.LoadAll<GameObject>("Prefabs");
         arPlaneManager = GetComponent<ARPlaneManager>();
-    }
-
-    public void SpawnFlowers()
-    {
         arPlaneManager.planesChanged += PlaneChanged;
     }
 

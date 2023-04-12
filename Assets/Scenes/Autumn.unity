@@ -12227,7 +12227,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 884046783}
-  - component: {fileID: 884046782}
   - component: {fileID: 884046784}
   m_Layer: 0
   m_Name: InputManager
@@ -12236,18 +12235,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &884046782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 884046781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8edfec6474a95648940f281e54b6ceb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &884046783
 Transform:
   m_ObjectHideFlags: 0
@@ -13901,7 +13888,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 100791647b30f684ab9f426e65f93b64, type: 3}
     - target: {fileID: 6833634639503438950, guid: 6422211a25c299e4786829eb5169b019, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6833634639503438950, guid: 6422211a25c299e4786829eb5169b019, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -13909,7 +13896,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6833634639503438950, guid: 6422211a25c299e4786829eb5169b019, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6833634639503438950, guid: 6422211a25c299e4786829eb5169b019, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
@@ -13922,7 +13909,7 @@ PrefabInstance:
     - target: {fileID: 6833634639503438950, guid: 6422211a25c299e4786829eb5169b019, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1385506452}
     - target: {fileID: 6833634639503438950, guid: 6422211a25c299e4786829eb5169b019, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -13945,7 +13932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6833634639503438950, guid: 6422211a25c299e4786829eb5169b019, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SpawnPrefab
+      value: OnPlaceObject
       objectReference: {fileID: 0}
     - target: {fileID: 6833634639503438950, guid: 6422211a25c299e4786829eb5169b019, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
@@ -13957,7 +13944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6833634639503438950, guid: 6422211a25c299e4786829eb5169b019, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: ARObjectPlacement, Assembly-CSharp
+      value: PlaceObjectOnPlane, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6833634639503438950, guid: 6422211a25c299e4786829eb5169b019, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
@@ -13973,7 +13960,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6833634639503438950, guid: 6422211a25c299e4786829eb5169b019, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6833634639503438950, guid: 6422211a25c299e4786829eb5169b019, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -14461,8 +14448,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1385506451}
-  - component: {fileID: 1385506450}
   - component: {fileID: 1385506449}
+  - component: {fileID: 1385506452}
   m_Layer: 0
   m_Name: Spawn Manager
   m_TagString: Untagged
@@ -14483,20 +14470,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 591096576}
---- !u!114 &1385506450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1385506448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8300bf0ec9ef24915b13af49bdf53084, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectsToSpawn: []
-  arRaycastManager: {fileID: 1499822173}
 --- !u!4 &1385506451
 Transform:
   m_ObjectHideFlags: 0
@@ -14512,6 +14485,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1385506452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385506448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99970141558556649aebde7f40a442f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placedPrefab: {fileID: 4020983980232809014, guid: 9fedecbd1aa68924b816f15cb97e611a, type: 3}
+  spawnedObject: {fileID: 0}
+  arRaycastManager: {fileID: 1499822173}
 --- !u!1 &1391419645
 GameObject:
   m_ObjectHideFlags: 0
@@ -14807,7 +14795,6 @@ GameObject:
   - component: {fileID: 1499822173}
   - component: {fileID: 1499822177}
   - component: {fileID: 1499822179}
-  - component: {fileID: 1499822178}
   - component: {fileID: 1499822180}
   m_Layer: 0
   m_Name: AR Session Origin
@@ -14885,20 +14872,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnChance: 50
---- !u!114 &1499822178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1499822172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99970141558556649aebde7f40a442f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  placedPrefab: {fileID: 4020983980232809014, guid: 9fedecbd1aa68924b816f15cb97e611a, type: 3}
-  spawnedObject: {fileID: 0}
 --- !u!114 &1499822179
 MonoBehaviour:
   m_ObjectHideFlags: 0
