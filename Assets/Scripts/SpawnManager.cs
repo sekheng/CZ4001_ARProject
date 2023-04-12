@@ -16,6 +16,20 @@ public class SpawnManager : MonoBehaviour
         Instantiate(objectsToSpawn[index], position, Quaternion.identity);
     }
 
+    private IEnumerator DelayedSpawn(int index)
+    {
+        yield return new WaitForSeconds(1f);
+        Vector2 touchPosition;
+        if (TryGetTouchPosition(out touchPosition))
+        {
+            if (arRaycastManager.Raycast(touchPosition, hitResults))
+            {
+                var hitPose = hitResults[0].pose;
+                Spawn(index, hitPose.position);
+            }
+        }
+    }
+
     private bool TryGetTouchPosition(out Vector2 touchPosition)
     {
         if (Input.touchCount > 0)
@@ -30,79 +44,31 @@ public class SpawnManager : MonoBehaviour
 
     public void SpawnObject1()
     {
-        Vector2 touchPosition;
-        if (TryGetTouchPosition(out touchPosition))
-        {
-            if (arRaycastManager.Raycast(touchPosition, hitResults))
-            {
-                var hitPose = hitResults[0].pose;
-                Spawn(0, hitPose.position);
-            }
-        }
+        StartCoroutine(DelayedSpawn(0));
     }
 
     public void SpawnObject2()
     {
-        Vector2 touchPosition;
-        if (TryGetTouchPosition(out touchPosition))
-        {
-            if (arRaycastManager.Raycast(touchPosition, hitResults))
-            {
-                var hitPose = hitResults[0].pose;
-                Spawn(1, hitPose.position);
-            }
-        }
+        StartCoroutine(DelayedSpawn(1));
     }
 
     public void SpawnObject3()
     {
-        Vector2 touchPosition;
-        if (TryGetTouchPosition(out touchPosition))
-        {
-            if (arRaycastManager.Raycast(touchPosition, hitResults))
-            {
-                var hitPose = hitResults[0].pose;
-                Spawn(2, hitPose.position);
-            }
-        }
+        StartCoroutine(DelayedSpawn(2));
     }
 
     public void SpawnObject4()
     {
-        Vector2 touchPosition;
-        if (TryGetTouchPosition(out touchPosition))
-        {
-            if (arRaycastManager.Raycast(touchPosition, hitResults))
-            {
-                var hitPose = hitResults[0].pose;
-                Spawn(3, hitPose.position);
-            }
-        }
+        StartCoroutine(DelayedSpawn(3));
     }
 
     public void SpawnObject5()
     {
-        Vector2 touchPosition;
-        if (TryGetTouchPosition(out touchPosition))
-        {
-            if (arRaycastManager.Raycast(touchPosition, hitResults))
-            {
-                var hitPose = hitResults[0].pose;
-                Spawn(4, hitPose.position);
-            }
-        }
+        StartCoroutine(DelayedSpawn(4));
     }
 
     public void SpawnObject6()
     {
-        Vector2 touchPosition;
-        if (TryGetTouchPosition(out touchPosition))
-        {
-            if (arRaycastManager.Raycast(touchPosition, hitResults))
-            {
-                var hitPose = hitResults[0].pose;
-                Spawn(5, hitPose.position);
-            }
-        }
+        StartCoroutine(DelayedSpawn(5));
     }
 }
