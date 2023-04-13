@@ -17,7 +17,7 @@ public class LeftPanelScript : MonoBehaviour
     private void Awake()
     {
         RectTransform rectT = transform as RectTransform;
-        m_TweenSize = rectT.rect.width;
+        m_TweenSize = rectT.rect.width * 1.1f;
         OriginaPos = rectT.localPosition;
     }
 

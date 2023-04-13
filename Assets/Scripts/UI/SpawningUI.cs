@@ -7,9 +7,6 @@ public class SpawningUI : MonoBehaviour
 {
     public const string CANCEL_SPAWN = "CANCEL_SPAWN";
 
-    [SerializeField, Tooltip("The cancel button image")]
-    private Image CancelImg;
-
     // Start is called before the first frame update
     void OnEnable()
     {
@@ -24,11 +21,6 @@ public class SpawningUI : MonoBehaviour
 
     void ARButtonSpawn(string spawnName)
     {
-        // ensure the image is active then set itself inactive
-        if (CancelImg != null)
-        {
-            CancelImg.gameObject.SetActive(true);
-        }
         Debug.Log("Spawning " + spawnName);
     }
 
